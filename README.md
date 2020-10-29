@@ -7,7 +7,6 @@
 | nickname                        | string     | null: false |
 | email                           | string     | null: false |
 | encrypted_password              | string     | null: false |
-| encrypted_password_confirmation | string     | null: false |
 | first_name_kanji                | string     | null: false |
 | last_name_kanji                 | string     | null: false |
 | first_name_kana                 | string     | null: false |
@@ -24,7 +23,7 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
-| text               | string     | null: false                    |
+| text               | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | detail_id          | integer    | null: false                    |
 | delivery_burden_id | integer    | null: false                    |
@@ -56,12 +55,12 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| postal_code     | integer    | null: false                    |
+| postal_code     | string     | null: false                    |
 | prefectures_id  | integer    | null: false                    |
 | city            | string     | null: false                    |
 | house_number    | string     | null: false                    |
 | house           | string     |                                |
-| phone_number    | integer    | null: false                    |
+| phone_number    | string     | null: false                    |
 | pay             | references | null: false, foreign_key: true |
 
 
