@@ -1,21 +1,21 @@
 class ShopsController < ApplicationController
-
+  
   def index
-    @users = User.all
+    @item = Shop.all
   end
 
   def new
-    @users = User.all
+    @item = Shop.new
+    
   end
 
   def create
-    User.create(user_params)
-    if @user.valid?
-      @user.save
+    @item = Shop.new(item_params)
+    if @item.save
       redirect_to root_path
     else
       #保存されなければ、newに戻る
-      render 'new'
+      render 'shops/new'
     end
   end
 
@@ -23,11 +23,12 @@ class ShopsController < ApplicationController
   end
 
   def show
+    
   end
 
   private
 
-  def user_params
-    params.require(:user)
+  def item_params # form_with 1  params 1
+    params.require(:shop).permit(:product_name,:image, :sales_status_id, :shipping_fee_status_id, :prefecture_id, :genre_id, :scheduled_delivery_id, :product_description, :price)
   end
 end
