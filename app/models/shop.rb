@@ -16,4 +16,5 @@ class Shop < ApplicationRecord
   validates :shipping_fee_status_id, numericality: { other_than: 1 }
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :scheduled_delivery_id, numericality: { other_than: 1 }
+  validates :price, numericality: {only_integer:true, greater_than: 299, less_than: 10000000}
 end
