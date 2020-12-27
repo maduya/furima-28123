@@ -11,7 +11,7 @@ RSpec.describe Genre, type: :model do
    it "すべての値が正常に記載されている場合は登録できる" do
     expect(@item).to be_valid
    end
-   
+
    it "カテゴリーが空だと登録できない" do
     @item.genre_id = 1
     @item.valid?
@@ -76,6 +76,12 @@ RSpec.describe Genre, type: :model do
      @item.price = '３００'
      @item.valid?
      expect(@item.errors.full_messages).to include("Price is not a number")
+   end
+
+   it "画像が空だと登録できない" do
+     @item.image = nil
+     @item.valid?
+     expect(@item.errors.full_messages).to include("Image can't be blank")
    end
   end
 end

@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :edit, :show, :update, :destroy, :new]
   
   def index
     #@item = Shop.all
