@@ -7,6 +7,6 @@ FactoryBot.define do
     sales_status_id         {3}
     shipping_fee_status_id  {3}
     scheduled_delivery_id   {3}
-    price                   {100}
+    price                   {300}
   end
 end

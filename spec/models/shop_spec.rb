@@ -8,6 +8,10 @@ RSpec.describe Genre, type: :model do
   
   describe "商品登録" do
 
+   it "すべての値が正常に記載されている場合は登録できる" do
+    expect(@item).to be_valid
+   end
+   
    it "カテゴリーが空だと登録できない" do
     @item.genre_id = 1
     @item.valid?
@@ -66,6 +70,12 @@ RSpec.describe Genre, type: :model do
     @item.price = 10000000
     @item.valid?
     expect(@item.errors.full_messages).to include("Price must be less than 10000000")
+   end
+
+   it "価格は半角数字でなければ登録できない" do
+     @item.price = '３００'
+     @item.valid?
+     expect(@item.errors.full_messages).to include("Price is not a number")
    end
   end
 end
