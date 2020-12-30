@@ -20,4 +20,6 @@ class User < ApplicationRecord
           validates :email, uniqueness: true, format: { with: EMAIL_REGEX }
           validates :birthday 
          end
+
+         has_many :shops
 end

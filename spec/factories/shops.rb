@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :shop do
+    
     product_name            {"あか"}
     product_description     {"あか"}
     genre_id                {3}
@@ -8,5 +9,8 @@ FactoryBot.define do
     shipping_fee_status_id  {3}
     scheduled_delivery_id   {3}
     price                   {300}
+    #user_id                 {1}
+    association :user
   end
+ 
 end

@@ -6,9 +6,10 @@ class Shop < ApplicationRecord
   belongs_to :prefecture
   belongs_to :scheduled_delivery
   has_one_attached :image
+  belongs_to :user
   
   #空の投稿を保存できないようにする
-  validates :image, :product_name, :product_description, :price, presence: true
+  validates :image, :product_name, :product_description, :price,presence: true
 
   #ジャンルの選択が「--」の時は保存できないようにする
   with_options presence: true, numericality: { other_than: 1 } do

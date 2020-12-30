@@ -30,6 +30,6 @@ class ShopsController < ApplicationController
   private
 
   def item_params # form_with 1  params 1
-    params.require(:shop).permit(:product_name,:image, :sales_status_id, :shipping_fee_status_id, :prefecture_id, :genre_id, :scheduled_delivery_id, :product_description, :price)
+    params.require(:shop).permit(:user_id, :product_name, :image, :sales_status_id, :shipping_fee_status_id, :prefecture_id, :genre_id, :scheduled_delivery_id, :product_description, :price)
   end
 end
