@@ -12,6 +12,7 @@ class ShopsController < ApplicationController
 
   def create
     @item = Shop.new(item_params)
+    @item.user_id = current_user.id 
     if @item.save
       redirect_to root_path
     else
