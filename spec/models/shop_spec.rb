@@ -78,6 +78,18 @@ RSpec.describe Genre, type: :model do
      expect(@item.errors.full_messages).to include("Price is not a number")
    end
 
+   it "価格は半角英数混合では登録できない" do
+     @item.price = '9h90'
+     @item.valid?
+     expect(@item.errors.full_messages).to include("Price is not a number")
+   end
+
+   it "価格は半角英語だけでは登録できない" do
+    @item.price = 'eigo'
+     @item.valid?
+     expect(@item.errors.full_messages).to include("Price is not a number")
+   end
+
    it "画像が空だと登録できない" do
      @item.image = nil
      @item.valid?
