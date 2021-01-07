@@ -1,4 +1,3 @@
-const { clearCache } = require("turbolinks")
 
 window.addEventListener('load', function(){
 
